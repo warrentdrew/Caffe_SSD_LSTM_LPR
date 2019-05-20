@@ -1,0 +1,27 @@
+train_net: "models/VGGNet/ccpd/SSD_300x300/train.prototxt"
+test_net: "models/VGGNet/ccpd/SSD_300x300/test.prototxt"
+test_iter: 20
+test_interval: 50
+base_lr: 0.0002500000118743628
+display: 10
+max_iter: 1000
+lr_policy: "multistep"
+gamma: 0.10000000149011612
+momentum: 0.8999999761581421
+weight_decay: 0.0005000000237487257
+snapshot: 200
+snapshot_prefix: "models/VGGNet/ccpd/SSD_300x300/VGG_ccpd_SSD_300x300"
+solver_mode: GPU
+device_id: 0
+debug_info: false
+snapshot_after_train: true
+test_initialization: false
+average_loss: 10
+stepvalue: 200
+stepvalue: 400
+stepvalue: 600
+iter_size: 2
+type: "SGD"
+eval_type: "detection"
+ap_version: "11point"
+

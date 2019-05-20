@@ -1,0 +1,18 @@
+net: "./jobs/Resnet_LSTM_CTC/train.prototxt"
+test_iter: 100
+test_interval: 1000
+test_initialization: false
+display: 20
+base_lr: 0.0001
+lr_policy: "step"
+stepsize: 10000
+gamma: 0.5
+# type: 'AdaDelta'
+max_iter: 100000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 2000
+snapshot_prefix: "models/LPR/lpr_resnet_lstm"
+solver_mode: GPU
+debug_info: false
+#clip_gradients: 10
