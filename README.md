@@ -20,7 +20,7 @@ CCPD数据集目前只包含传统蓝牌，并且一图一牌， 所以目前训
 
 # 编译 
 本项目为合并后caffe项目， 编译过程与标准caffe的编译过程相同，请根据运行环境修改Makefile.config后进行编译
-```
+```script
 make all -j8
 make pycaffe -j8
 ```
@@ -28,27 +28,27 @@ make pycaffe -j8
 # demo使用
 1. 将测试图片放入`sample_images/`
 2. 运行demo.py
-```bash
+```script
 python demo.py
 ```
 3. 运行结果图片将保存在`results/`中
 
 # 准确率测试
 1. 将测试图片放入`test_images/`中，或软链接测试集路径
-```bash
+```script
 ln -sf $your_own_path/* test_images/
 ```
 2. 运行accuracy_test.py
-```bash
+```script
 python accuracy_test.py
 ```
 
 # 模型评价
 从重采样后的CCPD数据集中随机采样500张作为测试机，车牌识别准确率为94.6%
 
-## 结果示例
-![img_text](https://gitlab.saicstack.com/AIlab_CV/Chinese-License-Plate-Recognition/raw/caffe_ssd_lstm_ctc/results/203_%E4%BA%ACP676E1.jpg)
-![img_text](https://gitlab.saicstack.com/AIlab_CV/Chinese-License-Plate-Recognition/raw/caffe_ssd_lstm_ctc/results/91_%E9%B2%81AB089J.jpg)
+# 结果示例
+![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/203_%E4%BA%ACP676E1.jpg)
+![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/38_%E8%B1%ABAWK983.jpg)
 
 
 # TODO
