@@ -107,7 +107,8 @@ def main(args):
     #detection on all the images from path
     for i, imgname in enumerate(os.listdir(args.image_dir)):
         imgpath = os.path.join(args.image_dir, imgname)
-        result, _ = recognet.predict(imgpath) #[10, 20 ,14 ,15, 25 , 63, 43]
+        img = caffe.io.load_image(imgpath)
+        result, _ = recognet.predict(img) #[10, 20 ,14 ,15, 25 , 63, 43]
 
         str_out = net_result_to_string(result)
         str_label = str(os.path.splitext(imgname)[0].split('_')[1])
@@ -132,12 +133,12 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu_id', type=int, default=0, help='gpu id')
     parser.add_argument('--model_def',
-                        default='examples/LPR/basic_lstm/deploy.prototxt')
+                        default='examples/LPR/basic_lstm/deploy_revised.prototxt')
     parser.add_argument('--image_height', default=32, type=int)
     parser.add_argument('--image_width', default=128, type=int)
     parser.add_argument('--model_weights',
-                        default= 'lpr_resnet_lstm_iter_4000.caffemodel')
-    parser.add_argument('--image_dir', default='/home/zhuyipin/DATASET/lpr_v1/test_ssd_result')
+                        default= 'models/LPR/lpr_resnet_lstm_iter_60000.caffemodel')
+    parser.add_argument('--image_dir', default='/home/zhuyipin/DATASET/ccpd/bbox_test')
     return parser.parse_args()
 
 if __name__ == '__main__':

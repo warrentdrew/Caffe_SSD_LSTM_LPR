@@ -68,10 +68,13 @@ class CaffeDetection:
         # set net to batch size of 1
         # image_resize = 300
         self.net.blobs['data'].reshape(1, 3, self.image_resize, self.image_resize)
-        image = caffe.io.load_image(image_file)
 
+        image = caffe.io.load_image(image_file)
+        #print("img0:", image[20, 20, :] * 255.0)
+        #print("img1:", image[20,20,:])
         #Run the net and examine the top_k results
         transformed_image = self.transformer.preprocess('data', image)
+        #print("img2:", transformed_image[:, 20, 20])
         self.net.blobs['data'].data[...] = transformed_image
 
         # Forward pass.
@@ -140,7 +143,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu_id', type=int, default=0, help='gpu id')
     parser.add_argument('--labelmap_file',
-                        default='data/ccpd/labelmap_ccpd.prototxt')
+                        default='data/ccpd/labelmap.prototxt')
     parser.add_argument('--model_def',
                         default='models/VGGNet/ccpd/SSD_300x300/deploy.prototxt')
     parser.add_argument('--image_resize', default=300, type=int)

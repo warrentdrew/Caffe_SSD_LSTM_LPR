@@ -1,0 +1,10 @@
+In file included from ./include/caffe/util/device_alternate.hpp:40:0,
+                 from ./include/caffe/common.hpp:19,
+                 from ./include/caffe/blob.hpp:8,
+                 from ./include/caffe/layers/memory_data_layer.hpp:6,
+                 from src/caffe/layers/memory_data_layer.cpp:7:
+./include/caffe/util/cudnn.hpp: In function ‘const char* cudnnGetErrorString(cudnnStatus_t)’:
+./include/caffe/util/cudnn.hpp:21:10: warning: enumeration value ‘CUDNN_STATUS_RUNTIME_IN_PROGRESS’ not handled in switch [-Wswitch]
+   switch (status) {
+          ^
+./include/caffe/util/cudnn.hpp:21:10: warning: enumeration value ‘CUDNN_STATUS_RUNTIME_FP_OVERFLOW’ not handled in switch [-Wswitch]

@@ -1,15 +1,7 @@
 #encoding=utf8
-'''
-Detection with SSD
-In this example, we will load a SSD model and use it to detect objects.
-'''
-
 import os
 import sys
 import argparse
-import numpy as np
-import cv2
-from PIL import Image, ImageDraw
 # Make sure that caffe is on the python path:
 caffe_root = './'
 os.chdir(caffe_root)
@@ -25,19 +17,11 @@ chars = ["京", "沪", "津", "渝", "冀", "晋", "蒙", "辽", "吉", "黑", "
 
 def net_result_to_string(res):
     str = ''
-
     for x in res[0]:
         index = int(x[0][0])
-        #print('idx:', index)
         if index != -1:
             str += chars[index]
-
     return str
-
-
-
-
-
 
 class CaffeRecog:
     def __init__(self, gpu_id, model_def, model_weights, image_height, image_width):
@@ -76,9 +60,8 @@ class CaffeRecog:
 
         # Forward pass.
         result = self.net.forward()['result']
-
-
         return result
+
 
 def main(args):
     '''main '''
@@ -105,8 +88,6 @@ def main(args):
 
     sample_num = i + 1
     print("Acc:", (sample_num - error_count) / sample_num)
-
-
 
 
 def parse_args():

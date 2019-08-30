@@ -1,1 +1,0 @@
-jobs/VGGNet/ccpd/SSD_300x300/VGG_ccpd_SSD_300x300.sh: 2: jobs/VGGNet/ccpd/SSD_300x300/VGG_ccpd_SSD_300x300.sh: ./build/tools/caffe: not found
