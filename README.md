@@ -47,8 +47,8 @@ python accuracy_test.py
 从重采样后的CCPD数据集中随机采样500张作为测试机，车牌识别准确率为94.6%
 
 # 结果示例
-![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/203_%E4%BA%ACP676E1.jpg)
-![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/38_%E8%B1%ABAWK983.jpg)
+![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/203_京P676E1.jpg)
+![img_text](https://github.com/warrentdrew/Caffe_SSD_LSTM_LPR/blob/master/results/324_渝F911Q9.jpg)
 
 
 # TODO
